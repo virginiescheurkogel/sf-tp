@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Liste des factures</h1>
+
+    <table class="table">
+        <tr>
+            <th>Date</th>
+            <th>Numéro de facture</th>
+            <th>Remise</th>
+            <th>Eléments</th>
+        </tr>
+        {% for invoice in invoiceList %}
+            <tr>
+                <td> {{ invoice.date | date('d/m/Y') }} </td>
+                <td> {{ invoice.number }} </td>
+                <td> {{ invoice.discountRate }} </td>
+                <td> {{ invoice.items }} </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

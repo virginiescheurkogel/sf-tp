@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Liste des adresses</h1>
+
+    <table class="table">
+        <tr>
+            <th>Rue</th>
+            <th>Code Postal</th>
+            <th>Ville</th>
+        </tr>
+        {% for address in addressList %}
+            <tr>
+                <td> {{ address.street }} </td>
+                <td> {{ address.zipCode }} </td>
+                <td> {{ address.city }} </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
